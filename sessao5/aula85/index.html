@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Formulario de Cadastro</h1>
+      <ul>
+        <li>Nenhum campo pode estar vazio</li>
+        <li>Utilizador com letras e/ou numeros</li>
+        <li>Utilizador tem que 3 ou 12 caracteres</li>
+        <li>Senha minima 6 a 12 caracteres</li>
+      </ul>
+      <form action="" method="post", class="formulario">
+
+        <label for="Nome"></label>
+        <input type="text" class="nome validar" name="" id="">
+        <label for="Sobrenome"></label>
+        <input type="text" class="sobrenome validar" name="" id="">
+        <label for="CC"></label>
+        <input type="text" class="cc validar" name="" id="">
+        <label for="Utilizador"></label>
+        <input type="text" class="utilizador validar" name="" id="">
+        <label for="Senha"></label>
+        <input type="password" class="senha validar" name="" id="">
+        <label for="Senha"></label>
+        <input type="password" class="repetir-senha validar" name="" id="">
+        <button type="submit">Enviar</button>
+        
+        </form>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/validaCC.js"></script>
+  </body>
+</html>

@@ -49,7 +49,7 @@ describe('ShoppingCart', () => {
     expect(sut.totalWithDicount()).toBe(42);
   });
 
-  it('shoul add products and clear cart', () => {
+  it('should add products and clear cart', () => {
     const { sut } = createSutWithProducts();
     expect(sut.items.length).toBe(2);
     sut.clear();
@@ -57,12 +57,26 @@ describe('ShoppingCart', () => {
     expect(sut.isEmpty()).toBe(true);
   });
 
-  it('shoul remove products', () => {
+  it('should remove products', () => {
     const { sut } = createSutWithProducts();
     expect(sut.items.length).toBe(2);
     sut.removeItem(1);
     expect(sut.items.length).toBe(1);
     sut.removeItem(0);
     expect(sut.isEmpty()).toBe(true);
+  });
+  //                                        1vez
+  it('should call discount.calculate(price) once when totalWithDiscount is called', () => {
+    const { sut, discountMock } = createSutWithProducts();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDicount();
+    expect(discountMockSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call discount.calculate(price) with totalPrice when totalWithDiscount is called', () => {
+    const { sut, discountMock } = createSutWithProducts();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDicount();
+    expect(discountMockSpy).toHaveBeenCalledWith(sut.total()); //preco total do carrinho = 42
   });
 });

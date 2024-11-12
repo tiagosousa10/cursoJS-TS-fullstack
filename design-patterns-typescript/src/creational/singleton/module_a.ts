@@ -1,6 +1,6 @@
-import { MyDatabaseModule } from './db/my-database-module';
+import { MyDatabaseFunction } from './db/my-database-function';
 
-const myDatabaseClassic = MyDatabaseModule;
+const myDatabaseClassic = MyDatabaseFunction;
 myDatabaseClassic.add({ name: 'Tiago', age: 30 });
 myDatabaseClassic.add({ name: 'Joana', age: 21 });
 myDatabaseClassic.add({ name: 'Andre', age: 13 });
